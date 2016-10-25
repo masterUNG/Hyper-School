@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     //Explicit
     private EditText userEditText, passwordEditText;
     private Button button;
+    private String userString, passwordString;
 
 
     @Override
@@ -28,10 +29,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                //Get Value From Edittext
+                userString = userEditText.getText().toString().trim();
+                passwordString = passwordEditText.getText().toString().trim();
 
+                //Check Space
+                if (userString.equals("") || passwordString.equals("")) {
+
+                    MyAlert myAlert = new MyAlert(MainActivity.this, "มีช่องว่าง", "กรุณากรอกทุกช่องคะ");
+                    myAlert.myDialog();
+
+
+                }
 
             }   // onClick
         });
+
 
 
     }   // Main Method
