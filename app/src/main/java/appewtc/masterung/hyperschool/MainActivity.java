@@ -40,7 +40,10 @@ public class MainActivity extends AppCompatActivity {
                     myAlert.myDialog();
 
 
-                }
+                } else {
+                    //NO Space
+
+                }   // if
 
             }   // onClick
         });
@@ -48,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     }   // Main Method
+
+
+    //Inner Class
+    private class SynUser extends
 
 
 }   // Main Class นี่คือคลาสหลัก
