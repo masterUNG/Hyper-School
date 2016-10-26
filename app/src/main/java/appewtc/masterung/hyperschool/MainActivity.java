@@ -1,7 +1,10 @@
 package appewtc.masterung.hyperschool;
 
+import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
 
                 } else {
                     //NO Space
+                    String strURL = "http://swiftcodingthai.com/voc/get_user_master.php";
+                    SynUser synUser = new SynUser(MainActivity.this);
+                    synUser.execute(strURL);
 
                 }   // if
 
@@ -54,7 +60,35 @@ public class MainActivity extends AppCompatActivity {
 
 
     //Inner Class
-    private class SynUser extends
+    private class SynUser extends AsyncTask<String, Void, String> {
+
+        private Context context;
+
+        public SynUser(Context context) {
+            this.context = context;
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+
+            try {
+
+
+
+
+            } catch (Exception e) {
+                Log.d("26octV1", "e doIn ==> " + e.toString());
+            }
+
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+        }
+    }   // SynUser Class
 
 
 }   // Main Class นี่คือคลาสหลัก
