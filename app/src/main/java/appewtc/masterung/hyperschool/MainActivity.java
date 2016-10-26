@@ -9,6 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.Response;
+
 public class MainActivity extends AppCompatActivity {
 
     //Explicit
@@ -55,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
     }   // Main Method
 
 
@@ -73,20 +76,27 @@ public class MainActivity extends AppCompatActivity {
 
             try {
 
-
+                OkHttpClient okHttpClient = new OkHttpClient();
+                Request.Builder builder = new Request.Builder();
+                Request request = builder.url(strings[0]).build();
+                Response response = okHttpClient.newCall(request).execute();
+                return response.body().string();
 
 
             } catch (Exception e) {
                 Log.d("26octV1", "e doIn ==> " + e.toString());
+                return null;
             }
 
 
-            return null;
         }
 
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
+
+            Log.d("26octV1", "JSON ==> " + s);
+
         }
     }   // SynUser Class
 
