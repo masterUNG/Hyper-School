@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
@@ -108,23 +109,47 @@ public class MainActivity extends AppCompatActivity {
                 JSONArray jsonArray = new JSONArray(s);
                 userStrings = new String[5];
 
-                for (int i=0;i<jsonArray.length();i++) {
+                for (int i = 0; i < jsonArray.length(); i++) {
 
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
 
-                    if () {
+                    if (userString.equals(jsonObject.getString("User"))) {
                         //True
+
+                        aBoolean = false;
+                        userStrings[0] = jsonObject.getString("id");
+                        userStrings[1] = jsonObject.getString("Position");
+                        userStrings[2] = jsonObject.getString("User");
+                        userStrings[3] = jsonObject.getString("Password");
+                        userStrings[4] = jsonObject.getString("Name");
 
                     }
 
                 }   // for
 
+                if (aBoolean) {
+                    //User False
+                    MyAlert myAlert = new MyAlert(MainActivity.this, "User False",
+                            "No This User in my Database");
+                    myAlert.myDialog();
+                } else if (passwordString.equals(userStrings[3])) {
+                    //Password True
+                    Toast.makeText(MainActivity.this, "Welcome " + userStrings[4],
+                            Toast.LENGTH_SHORT).show();
+
+
+                } else {
+                    //Password False
+                    MyAlert myAlert = new MyAlert(MainActivity.this,
+                            "Password Fasle", "Please Try Again Password False");
+                    myAlert.myDialog();
+
+                }
 
 
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
 
 
         }
