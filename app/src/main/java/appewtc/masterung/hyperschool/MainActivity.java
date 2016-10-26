@@ -13,6 +13,9 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 public class MainActivity extends AppCompatActivity {
 
     //Explicit
@@ -66,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
     private class SynUser extends AsyncTask<String, Void, String> {
 
         private Context context;
+        private boolean aBoolean = true;
+        private String[] userStrings;
+        private String truePasswordString;
 
         public SynUser(Context context) {
             this.context = context;
@@ -97,8 +103,37 @@ public class MainActivity extends AppCompatActivity {
 
             Log.d("26octV1", "JSON ==> " + s);
 
+            try {
+
+                JSONArray jsonArray = new JSONArray(s);
+                userStrings = new String[5];
+
+                for (int i=0;i<jsonArray.length();i++) {
+
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+                    if () {
+                        //True
+
+                    }
+
+                }   // for
+
+
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+
+
         }
     }   // SynUser Class
 
 
 }   // Main Class นี่คือคลาสหลัก
+
+
+
+
+
