@@ -11,6 +11,7 @@ public class MainHubActivity extends AppCompatActivity {
     private TextView textView;
     private ImageView sub1ImageView, sub2ImageView, sub3ImageView,
             sub4ImageView, sub5ImageView, sub6ImageView;
+    private String[] loginStrings;
 
 
     @Override
@@ -26,6 +27,13 @@ public class MainHubActivity extends AppCompatActivity {
         sub4ImageView = (ImageView) findViewById(R.id.imageView5);
         sub5ImageView = (ImageView) findViewById(R.id.imageView6);
         sub6ImageView = (ImageView) findViewById(R.id.imageView7);
+
+        //Get Value From Intent
+        loginStrings = getIntent().getStringArrayExtra("Login");
+
+        //Show Name & Position
+        String[] positionStrings = new String[]{"นักเรียน", "อาจารย์"};
+        textView.setText(loginStrings[4] + " " + positionStrings[Integer.parseInt(loginStrings[1])]);
 
 
     }   // Main Method
