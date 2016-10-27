@@ -1,6 +1,7 @@
 package appewtc.masterung.hyperschool;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -141,12 +142,21 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Welcome " + userStrings[4],
                             Toast.LENGTH_SHORT).show();
 
+                    //Intent to Hub
+                    Intent intent = new Intent(MainActivity.this, MainHubActivity.class);
+                    intent.putExtra("Login", userStrings);
+                    startActivity(intent);
+                    finish();
+
+
 
                 } else {
                     //Password False
                     MyAlert myAlert = new MyAlert(MainActivity.this,
                             "Password Fasle", "Please Try Again Password False");
                     myAlert.myDialog();
+
+
 
                 }
 
