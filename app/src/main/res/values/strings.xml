@@ -3,4 +3,12 @@
 
     <string name="login">เข้าใช้งาน</string>
 
+    <string name="sub1">หมวดวิชาที่ 1</string>
+    <string name="sub2">หมวดวิชาที่ 2</string>
+    <string name="sub3">หมวดวิชาที่ 3</string>
+    <string name="sub4">หมวดวิชาที่ 4</string>
+    <string name="sub5">หมวดวิชาที่ 5</string>
+    <string name="sub6">หมวดวิชาที่ 6</string>
+
+
 </resources>
