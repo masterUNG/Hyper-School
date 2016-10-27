@@ -127,6 +127,10 @@ public class MainActivity extends AppCompatActivity {
 
                 }   // for
 
+                Log.d("26octV1", "passUser==> " + passwordString);
+                Log.d("26octV1", "passTure==> " + userStrings[3]);
+
+
                 if (aBoolean) {
                     //User False
                     MyAlert myAlert = new MyAlert(MainActivity.this, "User False",
