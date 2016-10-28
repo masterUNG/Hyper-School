@@ -2,7 +2,9 @@ package appewtc.masterung.hyperschool;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,6 +21,7 @@ public class TeacherService extends AppCompatActivity {
     private TextView textView;
     private String questionString, choice1String, choice2String,
             choice3String, choice4String, trueAnswerString;
+    private int anInt = 0;
 
 
     @Override
@@ -60,6 +63,9 @@ public class TeacherService extends AppCompatActivity {
 
                 }
 
+                Log.d("28octV1", "TrueAnswer ==> " + anInt);
+
+
             }   // onClick
         });
 
@@ -69,6 +75,20 @@ public class TeacherService extends AppCompatActivity {
         ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(TeacherService.this,
                 android.R.layout.simple_list_item_1, showAnswer);
         spinner.setAdapter(stringArrayAdapter);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                anInt = i;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                anInt = 0;
+            }
+
+        });
+
 
     }   // Main Method
 
