@@ -1,13 +1,68 @@
 package appewtc.masterung.hyperschool;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 public class TeacherService extends AppCompatActivity {
+
+    //Explicit
+    private EditText questionEditText, choice1EditText, choice2EditText,
+            choice3EditText, choice4EditText;
+    private Spinner spinner;
+    private Button button;
+    private TextView textView;
+    private String questionString, choice1String, choice2String,
+            choice3String, choice4String, trueAnswerString;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_service);
-    }
-}
+
+        //Bind Widget
+        questionEditText = (EditText) findViewById(R.id.editText3);
+        choice1EditText = (EditText) findViewById(R.id.editText4);
+        choice2EditText = (EditText) findViewById(R.id.editText5);
+        choice3EditText = (EditText) findViewById(R.id.editText6);
+        choice4EditText = (EditText) findViewById(R.id.editText7);
+        spinner = (Spinner) findViewById(R.id.spinner);
+        button = (Button) findViewById(R.id.button2);
+        textView = (TextView) findViewById(R.id.textView8);
+
+        //Button Controller
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //Get Value From EditText
+                questionString = questionEditText.getText().toString().trim();
+                choice1String = choice1EditText.getText().toString().trim();
+                choice2String = choice2EditText.getText().toString().trim();
+                choice3String = choice3EditText.getText().toString().trim();
+                choice4String = choice4EditText.getText().toString().trim();
+
+                //Check Space
+                if (questionString.equals("") || choice1String.equals("") ||
+                        choice2String.equals("") || choice3String.equals("") ||
+                        choice4String.equals("")) {
+                    // Have Space
+
+                    MyAlert myAlert = new MyAlert(TeacherService.this,
+                            "มีช่องว่าง", "กรุณากรอกทุกช่อง คะ");
+                    myAlert.myDialog();
+
+                }
+
+            }   // onClick
+        });
+
+
+    }   // Main Method
+
+}   // Main Class

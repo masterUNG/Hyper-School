@@ -14,6 +14,11 @@ public class MyConstant {
             "ภาษาไทย",
             "เลข",
             "การงาน"};
+    private String urlAddQuestionString = "http://swiftcodingthai.com/voc/add_question_master.php";
+
+    public String getUrlAddQuestionString() {
+        return urlAddQuestionString;
+    }
 
     public String[] getSubjectStrings() {
         return subjectStrings;
