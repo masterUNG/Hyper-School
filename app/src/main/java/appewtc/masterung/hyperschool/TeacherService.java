@@ -28,7 +28,7 @@ public class TeacherService extends AppCompatActivity {
     private String questionString, choice1String, choice2String,
             choice3String, choice4String, trueAnswerString;
     private int anInt = 0;
-    private String[] loginStrings = getIntent().getStringArrayExtra("Login");
+    private String[] loginStrings;
     private String dateString;
 
 
@@ -36,6 +36,8 @@ public class TeacherService extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_service);
+
+        loginStrings = getIntent().getStringArrayExtra("Login");
 
         //Bind Widget
         questionEditText = (EditText) findViewById(R.id.editText3);
@@ -161,6 +163,10 @@ public class TeacherService extends AppCompatActivity {
 
 
     private void uploadAnConfirmData() {
+
+        MyConstant myConstant = new MyConstant();
+        UploadDataToServer uploadDataToServer = new UploadDataToServer(TeacherService.this);
+        uploadDataToServer.execute(myConstant.getUrlAddQuestionString());
 
     }
 
