@@ -1,5 +1,7 @@
 package appewtc.masterung.hyperschool;
 
+import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -101,6 +103,33 @@ public class TeacherService extends AppCompatActivity {
 
 
     }   // Main Method
+
+
+    //Inner Class
+    private class UploadDataToServer extends AsyncTask<String, Void, String> {
+
+        //Explicit
+        private Context context;
+
+        public UploadDataToServer(Context context) {
+            this.context = context;
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+
+
+
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+        }
+    }   // Upload Class
+
 
     private void uploadAnConfirmData() {
 
