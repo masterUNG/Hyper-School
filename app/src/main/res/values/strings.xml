@@ -11,4 +11,12 @@
     <string name="sub6">หมวดวิชาที่ 6</string>
 
 
+    <string name="question">คำถาม ?</string>
+    <string name="choice1">ตัวเลือกที่ 1</string>
+    <string name="choice2">ตัวเลือกที่ 2</string>
+    <string name="choice3">ตัวเลือกที่ 3</string>
+    <string name="choice4">ตัวเลือกที่ 4</string>
+    <string name="trueAnswer">ตัวเลือกที่ ถูกต้อง</string>
+
+
 </resources>
