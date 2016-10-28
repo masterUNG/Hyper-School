@@ -13,6 +13,10 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class TeacherService extends AppCompatActivity {
 
     //Explicit
@@ -25,6 +29,7 @@ public class TeacherService extends AppCompatActivity {
             choice3String, choice4String, trueAnswerString;
     private int anInt = 0;
     private String[] loginStrings = getIntent().getStringArrayExtra("Login");
+    private String dateString;
 
 
     @Override
@@ -41,6 +46,14 @@ public class TeacherService extends AppCompatActivity {
         spinner = (Spinner) findViewById(R.id.spinner);
         button = (Button) findViewById(R.id.button2);
         textView = (TextView) findViewById(R.id.textView8);
+
+        textView.setText("อาจารย์ " + loginStrings[4]);
+
+        //Find Date
+        Calendar calendar = Calendar.getInstance();
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        dateString = dateFormat.format(calendar.getTime());
+
 
         //Button Controller
         button.setOnClickListener(new View.OnClickListener() {
@@ -121,7 +134,8 @@ public class TeacherService extends AppCompatActivity {
 
             try {
 
-                Log.d("28octV2", "Teacher ==> " + );
+                Log.d("28octV2", "Teacher ==> " + loginStrings[4]);
+                Log.d("28octV2", "ExDate ==> " + dateString);
                 Log.d("28octV2", "Question ==> " + questionString);
                 Log.d("28octV2", "Choice1 ==> " + choice1String);
                 Log.d("28octV2", "Choice2 ==> " + choice2String);
