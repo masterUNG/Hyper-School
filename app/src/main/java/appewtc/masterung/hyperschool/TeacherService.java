@@ -3,6 +3,7 @@ package appewtc.masterung.hyperschool;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -62,6 +63,12 @@ public class TeacherService extends AppCompatActivity {
             }   // onClick
         });
 
+
+        //Spinner Controller
+        String[] showAnswer = new String[]{"โปรดเลือกคำตอบ", "1", "2", "3", "4"};
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(TeacherService.this,
+                android.R.layout.simple_list_item_1, showAnswer);
+        spinner.setAdapter(stringArrayAdapter);
 
     }   // Main Method
 
