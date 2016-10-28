@@ -22,7 +22,8 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/button2">
+        android:layout_above="@+id/button2"
+        android:padding="15dp">
 
         <TextView
             android:text="TextView"
@@ -31,7 +32,8 @@
             android:id="@+id/textView8"
             android:textSize="30sp"
             android:textStyle="normal|bold"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/aText" />
 
         <EditText
             android:layout_width="match_parent"
@@ -39,7 +41,10 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/editText3"
-            android:hint="@string/question" />
+            android:hint="@string/question"
+            android:layout_marginTop="15dp"
+            android:background="#82ffffff"
+            android:padding="3dp" />
 
         <EditText
             android:layout_width="match_parent"
@@ -47,7 +52,10 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/editText4"
-            android:hint="@string/choice1" />
+            android:hint="@string/choice1"
+            android:layout_marginTop="15dp"
+            android:background="#82ffffff"
+            android:padding="3dp" />
 
         <EditText
             android:layout_width="match_parent"
@@ -55,7 +63,10 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/editText5"
-            android:hint="@string/choice2" />
+            android:hint="@string/choice2"
+            android:layout_marginTop="15dp"
+            android:background="#82ffffff"
+            android:padding="3dp" />
 
         <EditText
             android:layout_width="match_parent"
@@ -63,7 +74,10 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/editText6"
-            android:hint="@string/choice3" />
+            android:hint="@string/choice3"
+            android:layout_marginTop="15dp"
+            android:background="#82ffffff"
+            android:padding="3dp" />
 
         <EditText
             android:layout_width="match_parent"
@@ -71,12 +85,18 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/editText7"
-            android:hint="@string/choice4" />
+            android:hint="@string/choice4"
+            android:layout_marginTop="15dp"
+            android:background="#82ffffff"
+            android:padding="3dp" />
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="#82ffffff"
+            android:padding="3dp">
 
             <TextView
                 android:text="@string/trueAnswer"
