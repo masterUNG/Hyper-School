@@ -13,6 +13,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.squareup.okhttp.FormEncodingBuilder;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -145,6 +151,23 @@ public class TeacherService extends AppCompatActivity {
                 Log.d("28octV2", "Choice4 ==> " + choice4String);
                 Log.d("28octV2", "TrueAnswer ==> " + anInt);
 
+                OkHttpClient okHttpClient = new OkHttpClient();
+                RequestBody requestBody = new FormEncodingBuilder()
+                        .add("isAdd", "true")
+                        .add("Teacher", loginStrings[4])
+                        .add("ExDate", dateString)
+                        .add("Question", questionString)
+                        .add("Choice1", choice1String)
+                        .add("Choice2", choice2String)
+                        .add("Choice3", choice3String)
+                        .add("Choice4", choice4String)
+                        .add("TrueAnswer", Integer.toString(anInt))
+                        .build();
+                Request.Builder builder = new Request.Builder();
+                Request request = builder.url(strings[0]).post(requestBody).build();
+                Response response = okHttpClient.newCall(request).execute();
+                return response.body().string();
+
 
             } catch (Exception e) {
                 Log.d("28octV2", "e doIn ==>" + e.toString());
@@ -152,12 +175,15 @@ public class TeacherService extends AppCompatActivity {
             }
 
 
-            return null;
+
         }
 
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
+
+            Log.d("28octV2", "Result ==> " + s);
+
         }
     }   // Upload Class
 
