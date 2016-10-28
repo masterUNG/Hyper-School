@@ -61,6 +61,16 @@ public class TeacherService extends AppCompatActivity {
                             "มีช่องว่าง", "กรุณากรอกทุกช่อง คะ");
                     myAlert.myDialog();
 
+                } else if (anInt == 0) {
+                    //Non Choose Answer
+                    MyAlert myAlert = new MyAlert(TeacherService.this,
+                            "ยังไม่เลือกคำตอบ", "กรุณาเลือกสักข้อสิ คะ");
+                    myAlert.myDialog();
+
+                } else {
+
+                    uploadAnConfirmData();
+
                 }
 
                 Log.d("28octV1", "TrueAnswer ==> " + anInt);
@@ -91,5 +101,9 @@ public class TeacherService extends AppCompatActivity {
 
 
     }   // Main Method
+
+    private void uploadAnConfirmData() {
+
+    }
 
 }   // Main Class
