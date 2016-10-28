@@ -24,6 +24,7 @@ public class TeacherService extends AppCompatActivity {
     private String questionString, choice1String, choice2String,
             choice3String, choice4String, trueAnswerString;
     private int anInt = 0;
+    private String[] loginStrings = getIntent().getStringArrayExtra("Login");
 
 
     @Override
@@ -118,7 +119,21 @@ public class TeacherService extends AppCompatActivity {
         @Override
         protected String doInBackground(String... strings) {
 
+            try {
 
+                Log.d("28octV2", "Teacher ==> " + );
+                Log.d("28octV2", "Question ==> " + questionString);
+                Log.d("28octV2", "Choice1 ==> " + choice1String);
+                Log.d("28octV2", "Choice2 ==> " + choice2String);
+                Log.d("28octV2", "Choice3 ==> " + choice3String);
+                Log.d("28octV2", "Choice4 ==> " + choice4String);
+                Log.d("28octV2", "TrueAnswer ==> " + anInt);
+
+
+            } catch (Exception e) {
+                Log.d("28octV2", "e doIn ==>" + e.toString());
+                return null;
+            }
 
 
             return null;
