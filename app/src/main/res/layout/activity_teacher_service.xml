@@ -45,27 +45,31 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editText4" />
+            android:id="@+id/editText4"
+            android:hint="@string/choice1" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editText5" />
+            android:id="@+id/editText5"
+            android:hint="@string/choice2" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editText6" />
+            android:id="@+id/editText6"
+            android:hint="@string/choice3" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editText7" />
+            android:id="@+id/editText7"
+            android:hint="@string/choice4" />
     </LinearLayout>
 </RelativeLayout>
